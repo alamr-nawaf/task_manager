@@ -1,24 +1,25 @@
-# README
+# Simple Task Manager – Ruby on Rails SaaS App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A minimal and clean **To-Do List web application** built with Ruby on Rails as a part of university project, enabling users to manage their personal tasks efficiently.
 
-Things you may want to cover:
+##Features
 
-* Ruby version
+- Add a new task with:
+  - Title
+  - Description
+  - Due date
+- View a list of all tasks
+- Mark tasks as complete/incomplete
+- Delete tasks
+- Clean and intuitive UI
 
-* System dependencies
+##How to run it
 
-* Configuration
+if you have ruby on rails just open the bash go to the task_management directory and write the next code:
+-bundle exec rspec
+-bundle exec cucumber
+-bundle install
+-rails db:create db:migrate
+-rails server
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+after that go to http://localhost:3000
