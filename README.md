@@ -23,3 +23,6 @@ if you have ruby on rails just open the bash go to the task_management directory
 - rails server
 
 after that go to http://localhost:3000
+
+![list Page](app/assets/images/listpage.PNG)
+![New task](app/assets/images/NewtaskPage.PNG)
