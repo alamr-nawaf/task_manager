@@ -61,6 +61,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-gem 'rspec-rails', '~> 5.0', group: [:development, :test]
+gem 'rspec-rails', '~> 8.0', group: [:development, :test]
 gem 'cucumber-rails', require: false, group: :test
 
