@@ -1,0 +1,80 @@
+<!-- app/views/tasks/index.html.erb -->
+<style>
+  body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #c40000;
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    border: 1px solid #c40000;
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f8d7da;
+    color: #c40000;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fdf2f2;
+  }
+
+  a {
+    color: #c40000;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .new-task-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #c40000;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+</style>
+
+<h1>All Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Completed</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.description %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.completed ? 'Yes' : 'No' %></td>
+        <td>
+          <%= link_to 'Edit', edit_task_path(task) %> |
+          <%= link_to 'Delete', task_path(task), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Task', new_task_path, class: 'new-task-btn' %>

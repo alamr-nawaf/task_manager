@@ -1,0 +1,89 @@
+<!-- app/views/tasks/new.html.erb -->
+<style>
+  body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #c40000;
+    margin-bottom: 20px;
+  }
+
+  form > div {
+    margin-bottom: 15px;
+  }
+
+  label {
+    font-weight: bold;
+    color: #c40000;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #c40000;
+    border-radius: 5px;
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+  }
+
+  input[type="submit"] {
+    background-color: #c40000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  a {
+    color: #c40000;
+    text-decoration: none;
+  }
+</style>
+
+<h1 style="color: #c40000;">New Task</h1>
+
+<%= form_with model: @task, local: true do |form| %>
+  <% if @task.errors.any? %>
+    <div>
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+      <ul>
+        <% @task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :due_date %>
+    <%= form.date_select :due_date %>
+  </div>
+
+  <div>
+    <%= form.label :completed %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Task" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to tasks', tasks_path %>
