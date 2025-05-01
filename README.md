@@ -2,7 +2,7 @@
 
 A minimal and clean **To-Do List web application** built with Ruby on Rails as a part of university project, enabling users to manage their personal tasks efficiently.
 
-#Features
+# Features
 
 - Add a new task with:
   - Title
@@ -13,7 +13,7 @@ A minimal and clean **To-Do List web application** built with Ruby on Rails as a
 - Delete tasks
 - Clean and intuitive UI
 
-#How to run it
+# How to run it
 
 if you have ruby on rails just open the bash go to the task_management directory and write the next code:
 - bundle exec rspec
